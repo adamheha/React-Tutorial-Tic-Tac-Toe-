@@ -25,10 +25,13 @@ function Board({ xIsNext, squares, onPlay }) {
   }
 
   const winner = calculateWinner(squares);
-  let status;
+  const isDraw = !winner && squares.every((square) => square !== null);
 
+  let status;
   if (winner) {
     status = 'Winner: ' + winner;
+  } else if (isDraw) {
+    status = 'Result: Draw';
   } else {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
