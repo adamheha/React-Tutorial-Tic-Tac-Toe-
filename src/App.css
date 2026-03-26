@@ -1,38 +1,94 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #eaf4ff, #fdf6ff);
+  color: #1f2937;
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.status {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.square {
+  background: white;
+  border: 2px solid #93c5fd;
+  border-radius: 12px;
+  float: left;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 64px;
+  height: 64px;
+  margin-right: 8px;
+  margin-top: 8px;
+  padding: 0;
   text-align: center;
+  width: 64px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.square:hover {
+  background-color: #dbeafe;
+  transform: scale(1.05);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  gap: 40px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  padding: 50px;
+}
+
+.game-board {
+  background: #ffffffcc;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.game-info {
+  min-width: 220px;
+  background: #ffffffcc;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.game-info button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
   color: white;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-info button:hover {
+  background: #1d4ed8;
 }
